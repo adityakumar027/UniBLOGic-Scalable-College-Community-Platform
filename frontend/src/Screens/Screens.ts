@@ -1,0 +1,12 @@
+import Landing from "./Landing";
+import Register from "./Register";
+import Post from "./Post";
+import UserDetails from "./UserDetails";
+import Home from "./Home";
+import Demo from "./test";
+import Chatroom from "./Chatroom";
+import Verify_OTP from "./Verify_OTP";
+import ForgotPassword from "./ForgotPassword";
+import Verify_OTP_forgot from "./VerifyOTP.forgot";
+import Community from "./Community";
+export { Landing ,Register,Home, Post,UserDetails,Demo,Chatroom,Verify_OTP,ForgotPassword,Verify_OTP_forgot,Community };
