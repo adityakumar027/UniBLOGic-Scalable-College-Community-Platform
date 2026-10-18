@@ -1,87 +1,36 @@
-# 🧠 Uniblogic
+# UniBLOGic
 
-**Uniblogic** is a scalable, real-time chess tournament platform engineered for university-level competitions and high-concurrency environments. It supports Swiss-system pairing, Buchholz scoring for fair tie-breaking, and real-time multiplayer gameplay.
+College community platform with user authentication, communities, posts, comments, and media-upload services. This is not the chess tournament project described by the previous README.
 
-> Built with a modern full-stack architecture using TypeScript, TurboRepo, Express, WebSockets, Prisma, PostgreSQL, and React.
+## Repository layout
 
----
+- `frontend/`: React 18, TypeScript, Vite, Tailwind CSS, Redux, and UI components.
+- `backend/Backend Server/`: Express/TypeScript API with Prisma, authentication, community, post, and user routes.
+- `backend/Video Transcoder/`: media-processing service.
+- `backend/Video_Stream/`: video infrastructure and supporting files.
 
-## 🚀 Features
+## Local development
 
-- ♟️ **Real-Time Chess Engine** — Powered by WebSockets for minimal-latency gameplay
-- 🧮 **Swiss Tournament System** — Dynamic match pairing with Buchholz tie-breaking
-- 🧩 **Modular Monorepo** — Built using TurboRepo for scalable team collaboration
-- 💾 **Robust Backend** — Express + Prisma + PostgreSQL
-- 💡 **Modern Frontend** — Vite + React + Tailwind UI
-- 🛠️ **CI/CD & Deployment** — PM2, NGINX, and EC2 support for reliable production deployment
-
-
-
-## ⚙️ Setup & Installation
-
-### 1. Clone the repo
+Frontend:
 
 ```bash
-git clone https://github.com/your-username/uniblogic.git
-cd uniblogic
-2. Install dependencies
-bash
-Copy
-Edit
-pnpm install
-3. Setup Environment Variables
-bash
-Copy
-Edit
-cp apps/backend2/.env.example apps/backend2/.env
-cp apps/frontend/.env.example apps/frontend/.env
-Make sure to set your actual values (DB URL, WebSocket URL, etc.) in the .env files.
+cd frontend
+npm install
+npm run dev
+```
 
-🧪 Running Locally
-Start Backend
-bash
-Copy
-Edit
-cd apps/backend2
-npx prisma generate
-pnpm dev
-Start Frontend
-bash
-Copy
-Edit
-cd apps/frontend
-pnpm dev
-Then go to: http://localhost:5173/game
+The frontend also provides `npm run build`, `npm run preview`, and `npm run lint`.
 
-🔗 Environment Variables
-apps/frontend/.env
-env
-Copy
-Edit
-VITE_BASE_URL=http://localhost:3001
-VITE_WEB_SOCKET_URL=ws://localhost:3001/ws
-apps/backend2/.env
-env
-Copy
-Edit
-DATABASE_URL=postgresql://<username>:<password>@localhost:5432/uniblogic
-PORT=3001
-📸 Screenshots
+Backend:
 
+```bash
+cd "backend/Backend Server"
+npm install
+npm run dev
+```
 
+The backend's dev script compiles TypeScript and launches `dist/server.js`. Set up its database and provider configuration first. A reproducible environment-variable example and full multi-service startup guide are still needed. The backend's test command is a placeholder, not an automated test suite.
 
-🛠️ Tech Stack
-Frontend: React, Vite, TailwindCSS
+## Deployment status
 
-Backend: Express.js, WebSockets, Prisma, PostgreSQL
-
-Monorepo: TurboRepo
-
-Deployment: AWS EC2, PM2, NGINX
-
-CI/CD: GitHub Actions (optional)
-
-🧑‍💻 Author
-Aditya Kumar
-IIIT Gwalior 
-
+No current live deployment is verified here. A complete deployment needs database configuration, authentication, storage/media providers, service URLs, and review of tracked environment files. Do not assume static frontend hosting alone runs the backend or video services.
